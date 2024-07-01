@@ -1,10 +1,12 @@
 package candidatura;
 
+import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class ProcessoSeletivo {
+
     public static void main(String[] args) {
-        String[] candidatos = { "FELIPE", "MARCIA", "JULIA", "PAULO", "AUGUSTO" };
+        String[] candidatos = {"FELIPE", "MARCIA", "JULIA", "PAULO", "AUGUSTO"};
         for (String candidato : candidatos) {
             entrandoEmContato(candidato);
         }
@@ -22,19 +24,21 @@ public class ProcessoSeletivo {
         do {
             atendeu = atender();
             continuarTentando = !atendeu;
-            if (continuarTentando)
-                tentativasRealizadas++;
-            else
+            if (continuarTentando) {
+                tentativasRealizadas++; 
+            }else {
                 System.out.println("Contato Realizado com sucesso!");
+            }
 
         } while (continuarTentando && tentativasRealizadas < 3);
 
-        if (atendeu)
-            System.out.println("Conseguimos contato com " + candidato + " NA" + tentativasRealizadas + " tentativa");
-        else
+        if (atendeu) {
+            System.out.println("Conseguimos contato com " + candidato + " NA" + tentativasRealizadas + " tentativa"); 
+        }else {
             System.out.println(
                     "Não conseguimos contato com" + candidato + ", número maximo de tentativas" + tentativasRealizadas
-                            + " realizada");
+                    + " realizada");
+        }
     }
 
     // Método auxiliar
@@ -43,7 +47,7 @@ public class ProcessoSeletivo {
     }
 
     static void imprimirSelecionados() {
-        String[] candidatos = { "FELIPE", "MARCIA", "JULIA", "PAULO", "AUGUSTO" };
+        String[] candidatos = {"FELIPE", "MARCIA", "JULIA", "PAULO", "AUGUSTO"};
         System.out.println("Imprimindo a lista de candidatos informando o indice do elemento");
         for (int indice = 0; indice < candidatos.length; indice++) {
             System.out.println("O candidato de nº " + (indice + 1) + " é " + candidatos[indice]);
@@ -57,8 +61,8 @@ public class ProcessoSeletivo {
     }
 
     static void selecaoCandidatos() {
-        String[] candidatos = { "FELIPE", "MARCIA", "JULIA", "PAULO", "AUGUSTO", "MONICA", "FABRICIO", "MIRELA",
-                "DANIELA", "JORGE" };
+        String[] candidatos = {"FELIPE", "MARCIA", "JULIA", "PAULO", "AUGUSTO", "MONICA", "FABRICIO", "MIRELA",
+            "DANIELA", "JORGE"};
 
         int candidatosSelecionados = 0;
         int candidatosAtual = 0;
